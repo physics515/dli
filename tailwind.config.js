@@ -1,12 +1,12 @@
 module.exports = {
         purge: [],
         darkMode: false, // or 'media' or 'class'
-        mode: 'jit',
+        //mode: 'jit',
         theme: {
                 extend: {
                         fontFamily: {
-                                'Cormorant-Garamond': ['"Cormorant Garamond"', 'serif'],
-                                'Fira-Sans': ['"Fira Sans"', 'sans- serif'],
+                                'Cormorant-Garamond': ['"Cormorant Garamond"'],
+                                'Fira-Sans': ['"Fira Sans"'],
                         }
                 },
         },
