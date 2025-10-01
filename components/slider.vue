@@ -1,26 +1,10 @@
 <template>
-        <swiper
-                class="swiper h-full w-full translate-z0"
-                :modules="modules"
-                :space-between="30"
-                :loop="true"
-                :centered-slides="true"
-                :autoplay="{
-                        delay: 10000,
-                        disableOnInteraction: false
-                }"
-        >
-                <swiper-slide 
-                        v-for="banner in banners" 
-                        :key="banner" 
-                        class="swiper-slide m-auto flex justify-center items-center translate-z0 bg-FFECD6"
-                >
-                        <img
-                                :src="`/slides/${banner}`"
-                                class="m-auto mix-blend-multiply filter will-change-opacity translate-z0"
-                                loading="lazy"
-                                alt="Industrial slide"
-                        />
+        <swiper class="swiper h-full w-full translate-z0" :modules="modules" :space-between="30" :loop="true" :centered-slides="true" :autoplay="{
+                delay: 10000,
+                disableOnInteraction: false
+        }">
+                <swiper-slide v-for="banner in banners" :key="banner" class="swiper-slide m-auto flex justify-center items-center translate-z0 bg-FFECD6">
+                        <img :src="`/slides/${banner}`" class="m-auto mix-blend-multiply filter will-change-opacity translate-z0" loading="lazy" alt="Industrial slide" />
                 </swiper-slide>
         </swiper>
 </template>
@@ -46,26 +30,27 @@ defineProps({
 const modules = [Autoplay, Pagination, Navigation]
 </script>
 <style scoped>
-        
-        img[lazy='loading'] {
-                filter: blur(15px);
-        }
+img[lazy='loading'] {
+        filter: blur(15px);
+}
 
 
-        .will-change-opacity {
-                will-change: opacity;
-                transform: translateZ(0);
-                -webkit-mix-blend-mode: multiply;
-                -moz-mix-blend-mode: multiply;
-                -o-mix-blend-mode: multiply;
-                -ms-mix-blend-mode: multiply;
-                mix-blend-mode:multiply;
-        }
-        .translate-z0 {
-                transform: translateZ(0);
-                will-change: opacity;
-        }
-        .bg-FFECD6 {
-                background-color: #FFECD6;
-        }
+.will-change-opacity {
+        will-change: opacity;
+        transform: translateZ(0);
+        -webkit-mix-blend-mode: multiply;
+        -moz-mix-blend-mode: multiply;
+        -o-mix-blend-mode: multiply;
+        -ms-mix-blend-mode: multiply;
+        mix-blend-mode: multiply;
+}
+
+.translate-z0 {
+        transform: translateZ(0);
+        will-change: opacity;
+}
+
+.bg-FFECD6 {
+        background-color: #FFECD6;
+}
 </style>

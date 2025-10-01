@@ -11,7 +11,7 @@
                                                         fabrication industry, focused on the most challenging custom &
                                                         bespoke metalworks. Our community has entrusted us with repairing
                                                         and maintaining some of its most valued cultural landmarks and
-                                                        artifacts. For twenty-three years local business and industry 
+                                                        artifacts. For twenty-three years local business and industry
                                                         come to us when quality, safety, and reliability matter.
                                                 </p>
                                                 <div></div>
@@ -41,7 +41,7 @@ const imageNames = Object.keys(slideFiles).map(path => path.split('/').pop())
 
 onMounted(() => {
         images.value = imageNames
-        
+
         setTimeout(() => {
                 swipeForceUpdate.value = false
         }, 2000)
@@ -59,30 +59,30 @@ const loadedImages = computed(() => {
 
 
 <style>
-        @media (min-width: 1536px) {
+@media (min-width: 1536px) {
 
-                .\32 xl\:grid-template-cols-40vw-40vw {
-                        grid-template-columns: 40vw 40vw;
-                }
-
-                .\32 xl\:grid-template-cols-16-auto {
-                        grid-template-columns: 8rem auto;
-                }
-        }
-
-        .grid-template-cols-16-auto {
-                grid-template-columns: 8rem auto;
-        }
-
-        .grid-template-cols-40vw-40vw {
+        .\32 xl\:grid-template-cols-40vw-40vw {
                 grid-template-columns: 40vw 40vw;
         }
 
-        .max-h-600px {
-                max-height: 600px;
+        .\32 xl\:grid-template-cols-16-auto {
+                grid-template-columns: 8rem auto;
         }
+}
 
-        .max-w-600px {
-                max-width: 600px;
-        }
+.grid-template-cols-16-auto {
+        grid-template-columns: 8rem auto;
+}
+
+.grid-template-cols-40vw-40vw {
+        grid-template-columns: 40vw 40vw;
+}
+
+.max-h-600px {
+        max-height: 600px;
+}
+
+.max-w-600px {
+        max-width: 600px;
+}
 </style>
