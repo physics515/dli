@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+@theme {
+  --font-family-cormorant-garamond: "Cormorant Garamond", serif;
+  --font-family-fira-sans: "Fira Sans", sans-serif;
+}

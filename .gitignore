@@ -88,3 +88,10 @@ sw.*
 
 # Vim swap files
 *.swp
+
+# Lock files (keep yarn.lock, ignore package-lock.json)
+package-lock.json
+
+# Nuxt 4 output directories
+.output
+.nuxt

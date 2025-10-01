@@ -2,7 +2,7 @@
         <div class="flex w-screen 2xl:h-screen items-center justify-center">
                 <div class="grid grid-flow-row 2xl:grid-flow-col justify-items-center 2xl:grid-template-cols-40vw-40vw">
                         <div class="flex items-center m-auto h-screen 2xl:h-full px-8">
-                                <div class="m-auto" v-lazy-container="{ selector: 'img' }">
+                                <div class="m-auto">
                                         <Logo width="600px" />
                                         <div class="2xl:grid 2xl:grid-cols-2 2xl:grid-template-cols-16-auto">
                                                 <div></div>
@@ -28,47 +28,32 @@
         </div>
 </template>
 
-<script>
-        export default {
-                mounted() {
-                        this.importAll(require.context("../assets/slides/", true, /\.png$/));
+<script setup>
+import { ref, computed, onMounted } from 'vue'
 
-                        setTimeout(() => {
-                                this.swipeForceUpdate = false;
-                        }, 2000);
-                },
+const _ = useLodash()
+const images = ref([])
+const swipeForceUpdate = ref(true)
 
-                methods: {
-                        importAll(r) {
-                                r.keys().forEach(key => this.images.push(key.substring(2)));
-                        }
-                },
+// Get all image file names from assets/slides directory
+const slideFiles = import.meta.glob('../assets/slides/*.png', { eager: true })
+const imageNames = Object.keys(slideFiles).map(path => path.split('/').pop())
 
-                data() {
-                        return {
-                                images: [],
-                                swipeForceUpdate: true,
-                        }
-                },
+onMounted(() => {
+        images.value = imageNames
+        
+        setTimeout(() => {
+                swipeForceUpdate.value = false
+        }, 2000)
+})
 
-                computed: {
-                        banners() {
-                                return this.$_.shuffle(this.images);
-                        },
-                        loadedImages() {
-                                if(this.banners.length > 0) return true; else return false;
-                        },
-                },
+const banners = computed(() => {
+        return _.shuffle(images.value)
+})
 
-                computed: {
-                        banners() {
-                                return this.$_.shuffle(this.images);
-                        },
-                        loadedImages() {
-                                if(this.banners.length > 0) return true; else return false;
-                        }
-                }
-        };
+const loadedImages = computed(() => {
+        return banners.value.length > 0
+})
 </script>
 
 
