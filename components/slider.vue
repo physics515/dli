@@ -15,11 +15,11 @@
                         :key="banner" 
                         class="swiper-slide m-auto flex justify-center items-center translate-z0 bg-FFECD6"
                 >
-                        <NuxtImg
+                        <img
                                 :src="`/slides/${banner}`"
                                 class="m-auto mix-blend-multiply filter will-change-opacity translate-z0"
                                 loading="lazy"
-                                format="webp"
+                                alt="Industrial slide"
                         />
                 </swiper-slide>
         </swiper>

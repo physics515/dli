@@ -17,7 +17,8 @@
                                                 <p class="mt-8 max-w-2xl font-Fira-Sans">
                                                         David Icenhour<br>
                                                         david<b>dlis</b>@gmail.com<br>
-                                                        336.391.3154<br><br>
+                                                        336.391.3154<br>
+                                                        hrs. M-F 9am - 5pm<br><br>
                                                         4301 Old Walkertown Road,<br>
                                                         Winston-Salem, NC 27105
                                                 </p>

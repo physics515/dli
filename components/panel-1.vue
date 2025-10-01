@@ -22,7 +22,7 @@
                                 </div>
                         </div>
                         <div class="flex items-center m-auto order-first 2xl:order-last h-screen 2xl:h-full">
-                                <slider v-if="loadedImages" :forceUpdate="swipeForceUpdate" :banners="banners" class="grayscale w-screen max-h-600px max-w-600px" />
+                                <slider v-if="loadedImages" :forceUpdate="swipeForceUpdate" :banners="banners" class="child-greyscale w-screen max-h-600px max-w-600px" />
                         </div>
                 </div>
         </div>
@@ -35,8 +35,8 @@ const _ = useLodash()
 const images = ref([])
 const swipeForceUpdate = ref(true)
 
-// Get all image file names from assets/slides directory
-const slideFiles = import.meta.glob('../assets/slides/*.png', { eager: true })
+// Get all image file names from public/slides directory
+const slideFiles = import.meta.glob('../public/slides/*.png', { eager: true })
 const imageNames = Object.keys(slideFiles).map(path => path.split('/').pop())
 
 onMounted(() => {
